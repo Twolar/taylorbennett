@@ -1,9 +1,17 @@
 import React from "react";
 import PageTitle from "./(components)/PageTitle";
+import Image from "next/image";
 
 const Home = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <Image
+        width={150}
+        height={150}
+        src="/Taylor-Bennett-BlackAndWhite.jpeg"
+        alt="Profile picture of Taylor Bennett in black and white"
+        className="rounded-md mb-5"
+      />
       <PageTitle
         title="Taylor Bennett"
         subtitle="Passionate technologist with experience in enterprise-scale software engineering, consultancy-based web development, and IT support.
