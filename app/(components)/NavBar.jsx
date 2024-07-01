@@ -13,9 +13,9 @@ const Navbar = () => {
             <li>
               <Link href={PageRoutes.Work}>work</Link>
             </li>
-            <li>
+            {/* <li>
               <Link href={PageRoutes.Contact}>contact</Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
