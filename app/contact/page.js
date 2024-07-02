@@ -1,6 +1,6 @@
 import React from "react";
-import PageTitle from "../(components)/PageTitle";
-import ContactForm from "../(components)/ContactForm";
+import PageTitle from "@/app/(components)/PageTitle";
+import ContactForm from "@/app/(components)/ContactForm";
 
 const Contact = () => {
   return (

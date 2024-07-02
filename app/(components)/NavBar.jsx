@@ -1,5 +1,5 @@
 import Link from "next/link";
-import PageRoutes from "../(misc)/PageRoutes";
+import PageRoutes from "@/app/(misc)/PageRoutes";
 
 const Navbar = () => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import PageTitle from "./(components)/PageTitle";
+import PageTitle from "@/app/(components)/PageTitle";
 import Image from "next/image";
 
 const Home = () => {
