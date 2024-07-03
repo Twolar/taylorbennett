@@ -14,7 +14,7 @@ module.exports = {
       {
         myTheme: {
           ...require("daisyui/src/theming/themes")["black"],
-          primary: "#ff3950",
+          primary: "#ff7ea3",
         },
       },
     ],
