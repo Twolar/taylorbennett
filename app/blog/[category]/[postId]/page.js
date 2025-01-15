@@ -5,6 +5,10 @@ const BlogPostPage = ({ params }) => {
   const { category, postId } = params;
   const postData = getPostData(category, postId);
 
+  // TODO: Add category buttons, with current highlighted and have hover highlighting
+
+  // TODO: Refactor repitition into components...
+
   return (
     <div className="min-h-screen flex flex-col">
       <h1 className="text-3xl font-bold text-primary">{postData.title}</h1>

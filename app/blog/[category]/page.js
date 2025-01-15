@@ -7,6 +7,8 @@ const BlogCategoryPage = ({ params }) => {
   const { category } = params;
   const allPostsData = getSortedPostsData();
 
+  // TODO: Highlight hover for categories
+
   // Filter posts by category
   const filteredPosts = allPostsData.filter((post) => post.category === category);
 
