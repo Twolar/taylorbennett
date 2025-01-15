@@ -13,6 +13,9 @@ const Navbar = () => {
             <li>
               <Link href={PageRoutes.Work}>work</Link>
             </li>
+            <li>
+              <Link href={PageRoutes.Blog}>blog</Link>
+            </li>
             {/* <li>
               <Link href={PageRoutes.Contact}>contact</Link>
             </li> */}

@@ -1,0 +1,48 @@
+import React from "react";
+import { getSortedPostsData } from "@/lib/blogPosts";
+import Link from "next/link";
+
+const BlogIndex = () => {
+  const allPostsData = getSortedPostsData();
+
+  // Get unique categories
+  const categories = [
+    ...new Set(allPostsData.map((post) => post.category).filter(Boolean)),
+  ];
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      {/* <PageTitle title="Blog" subtitle="Explore posts by category:" /> */}
+      <h1 className="text-5xl font-bold text-primary">Blog</h1>
+      {/* Categories Links */}
+      <div className="flex flex-wrap gap-4 mt-6">
+        {categories.map((category) => (
+          <Link key={category} href={`/blog/${category}`} className="btn-sm bg-accent rounded px-3 py-1">
+            {category}
+          </Link>
+        ))}
+      </div>
+      <div className="divider divider-accent"></div>
+
+      {allPostsData.map(({ id, date, title, category }) => (
+        <div key={id}>
+          <h2 className="text-l font-bold text-primary">
+            <Link href={`/blog/${category}/${id}`}>{title}</Link>
+          </h2>
+          <p className="text-sm">
+            <span>{category && `${category} | `}</span>
+            <span className="italic">{date}</span>
+          </p>
+          <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
+        </div>
+      ))}
+
+      {/* No Posts */}
+      {allPostsData.length === 0 && (
+        <p className="text-center text-gray-500">No posts available.</p>
+      )}
+    </div>
+  );
+};
+
+export default BlogIndex;
