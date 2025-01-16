@@ -1,5 +1,4 @@
 import React from "react";
-import PageTitle from "@/app/(components)/PageTitle";
 import { getSortedPostsData } from "@/lib/blogPosts";
 import Link from "next/link";
 
@@ -10,11 +9,17 @@ const BlogCategoryPage = ({ params }) => {
   // TODO: Highlight hover for categories
 
   // Filter posts by category
-  const filteredPosts = allPostsData.filter((post) => post.category === category);
+  const filteredPosts = allPostsData.filter(
+    (post) => post.category === category
+  );
 
   return (
     <div className="min-h-screen flex flex-col">
-      <PageTitle title="Blog" subtitle={`Category: ${category}`} />
+      <h1 className="text-5xl font-bold text-primary">Blog</h1>
+      <div className="flex flex-wrap gap-4 mt-6">
+        <p className="btn-sm bg-accent rounded px-3 py-1">{category}</p>
+      </div>
+      <div className="divider divider-accent"></div>
       {filteredPosts.map(({ id, date, title }) => (
         <div key={id}>
           <h2 className="text-l font-bold text-primary">
@@ -40,12 +45,4 @@ export async function generateStaticParams() {
   return categories.map((category) => ({
     category,
   }));
-}
-
-// Optionally, set metadata for each category
-export async function generateMetadata({ params }) {
-  return {
-    title: `Category: ${params.category}`,
-    description: `Posts under the ${params.category} category.`,
-  };
 }
