@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { truncateText } from '@/app/(util)/utilStrings'
 
 const BlogPosts = ({ categories, posts }) => {
   return (
@@ -18,14 +19,16 @@ const BlogPosts = ({ categories, posts }) => {
       </div>
       <div className="divider divider-accent"></div>
 
-      {posts.map(({ id, date, title, category }) => (
-        <div key={id}>
-          <h2 className="text-l font-bold text-primary">
-            <Link href={`/blog/${category}/${id}`}>{title}</Link>
+      {posts.map((post) => (
+        <div key={post.id}>
+          <h2 className="text-lg font-bold text-primary">
+            <Link href={`/blog/${post.category}/${post.id}`}>{post.title}</Link>
           </h2>
+
+          {post.description && <p className="text-sm">{truncateText(post.description, 100)}</p>}
           <p className="text-sm italic mt-1">
-            <span>{date}</span>
-            <span>{category && ` | ${category}`}</span>
+            <span>{post.date}</span>
+            <span>{post.category && ` | ${post.category}`}</span>
           </p>
           <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
         </div>
