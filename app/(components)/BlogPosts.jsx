@@ -23,9 +23,9 @@ const BlogPosts = ({ categories, posts }) => {
           <h2 className="text-l font-bold text-primary">
             <Link href={`/blog/${category}/${id}`}>{title}</Link>
           </h2>
-          <p className="text-sm">
-            <span>{category && `${category} | `}</span>
-            <span className="italic">{date}</span>
+          <p className="text-sm italic mt-1">
+            <span>{date}</span>
+            <span>{category && ` | ${category}`}</span>
           </p>
           <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
         </div>
