@@ -12,7 +12,7 @@ const Work = () => {
       <div className="">
         <h2 className="text-2xl font-bold text-primary">Catalyst</h2>
         <h3 className="text-l font-semibold">Software Engineer · Full-time</h3>
-        <p className="text-sm ">Jan 2024 - Present · 7 mos</p>
+        <p className="text-sm ">Jan 2024 - Present</p>
         <p className="text-xs text-neutral-100">
           Dublin, County Dublin, Ireland
         </p>
